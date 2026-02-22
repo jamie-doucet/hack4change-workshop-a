@@ -16,9 +16,9 @@ A sample web server in Python.
 
 ### Dev Server
 
-This will run a server that reloads on file change, if you do not specify the address and port it will run on port 8000 instead
+This will run a server that rebuilds and reloads on file change, if you do not specify the address and port it will run on port 8000 instead
 
-`python manage.py runserver 0.0.0.0:8081`
+`fastapi dev main.py --port 8080`
 
 ### Tests
 
@@ -32,10 +32,8 @@ For E2E/API tests, make sure your dev server is running on port 8081 and:
 
 ### Running/Building
 
-You can use the same command as the dev server, but go into the `settings.py` file and change the key, debug flags, etc... 
-
-`Django` has documentation on running it other ways as well if desired.
+In order to build and run the application, you can use `python main.py`.
 
 ## Reference Material
 
-See https://docs.djangoproject.com/en/6.0/ for more information on Django patterns along with tutorials.
+TODO FastAPI
