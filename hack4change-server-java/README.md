@@ -1,34 +1,34 @@
-# Sample Java Spring Boot Server
+# Hack4Change Workshop Java Repository
+This is the sample Java server repository for the first Hack4Change workshop. Combined with the Hack4Change client applications, you can use this client as a basis to build your own full stack web application.
 
-## Requirements
+# Getting Started
+To start working with this client, do the following:
+- Download and install a Java development kit. We recommend that you use the most recent version of Temurin, available at https://adoptium.net/.
+- Download and install the Maven package manager. You can find instructions on how to install and use Maven at https://maven.apache.org/.
+- From this directory, run the `mvn compile` command. This will download your dependencies and then display a confirmation message to indicate that it's been compiled.
 
-- A `jdk` that's version 17+
-- `maven` package manager
+# Commands
+You can run the following commands from this directory:
 
-## Setup
+- `mvn spring-boot:run` will run the application for you as a web server at `http://localhost:8080`. If you recompile the application then it will reload the server.
+- `mvn compile` will recompile the application.
+- `mvn package` will run all tests, then build a jar file in the `./target` directory.
+- `mvn test -DexcludedGroups=integration` will run only the unit tests for the application.
+- `mvn test` will run all tests, including both unit and end-to-end tests.
 
-Run `mvn compile` and it should download your dependencies and confirm that it compiled. Most IDEs will manage this for you from the `pom.xml`.
+# Layout
+The base directory for this server contains this document and the `pom.xml` file defining the application's dependencies.
 
-`IntelliJ` and `Eclipse` are popular ones.
+The `src` directory contains the source code, and within the `src` directory:
+- The `main/java/com/hack4change` directory contains the source code for the server.
+- The `main/resources` directory contains the `application.properties` file, which defines the port for the application server.
+- The `test/java/com/hack4change` directory contains all test files for the application.
 
-## Scripts
+# Frameworks and Tools
+This application uses the Java programming language. Learning resources for the language and links to its documentation are available at https://dev.java/learn/.
 
-### Dev Server
+All of the build and test commands are provided by the Apache Maven build tool. Documentation for this tool is available at https://maven.apache.org/index.html.
 
-Run `mvn spring-boot:run`. Everytime you recompile it will reload the server. You can access it at `http://localhost:8081`.
+The web server is implemented using the Spring Boot framework. Information and resources for Spring Boot are available at https://spring.io/projects/spring-boot.
 
-### Testing
-
-If you just want to run unit tests (faster) run `mvn test -DexcludedGroups=integration`
-
-If you have the dev server up and running, run `mvn test` and it will run the e2e tests as well.
-
-### Compiling
-
-`mvn compile` will attempt to compile your code and tell you if anything is wrong.
-
-### Deploying
-
-`mvn package -DexcludedGroups=integration` will run unit tests, then build a jar file in the `./target` directory.
-
-You can run the jar file with `java -jar ./file` and it will serve the application on port 8081.
+Unit tests are implemented with JUnit. Resources are available for JUnit at https://docs.junit.org/6.0.3/overview.html. Integration tests also use the Rest Assured library, available at https://rest-assured.io/.
